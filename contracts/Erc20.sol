@@ -5,7 +5,7 @@ pragma solidity ^0.8.9;
 contract Erc20{
   string private _name;
   string private _symbol;
-  uint8 private _decimal;
+  uint8 private _decimals;
   uint256 private _totalSupply;
 
   /*
@@ -39,10 +39,10 @@ contract Erc20{
   );
 
 
-  constructor (string memory name_, string memory symbol_, uint8 decimal_, uint256 totalSupply_){
+  constructor (string memory name_, string memory symbol_, uint8 decimals_, uint256 totalSupply_){
     _name = name_;
     _symbol = symbol_;
-    _decimal = decimal_;
+    _decimals = decimals_;
     _totalSupply = totalSupply_;
     // adding all the total supply in the balance of contract creator address
     _balanceOf[msg.sender] = totalSupply_;
@@ -56,8 +56,8 @@ contract Erc20{
     return _symbol;
   }
 
-  function decimal() public view returns(uint8){
-    return _decimal;
+  function decimals() public view returns(uint8){
+    return _decimals;
   }
 
   function totalSupply() public view returns(uint256){

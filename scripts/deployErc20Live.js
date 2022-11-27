@@ -1,6 +1,6 @@
 const hre = require("hardhat");
 
-// Deployed contract address : 0x4EEdAfa3e571A157BC98441beb131a4E187879e5
+// Deployed contract address : 0x3B8d6C2550ee2f71f8E54825e83ac646f64181Df
 async function main() {
   const Erc20 = await hre.ethers.getContractFactory("Erc20")
   const erc20 = await Erc20.deploy("Crypto Rupee Index", "CRE8", 18, 1000000)
